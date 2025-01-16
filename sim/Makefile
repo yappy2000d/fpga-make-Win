@@ -1,7 +1,9 @@
 ###################################################################
 # Project Configuration
 ###################################################################
-PROJECT = <project name>      # Same as Top-Level Entity
+
+include ../config
+
 REGION = <region name>        # Instance name
 
 WORK_DIR = work
