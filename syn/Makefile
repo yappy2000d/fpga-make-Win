@@ -32,7 +32,7 @@ smart: smart.log
 
 copy_src:
 	@copy /y ..\src\* . >NUL
-	$(eval SOURCE_FILES := $(wildcard *.v))
+	$(eval SOURCE_FILES := $(wildcard *.v *.sv))
 
 ###################################################################
 # Executable Configuration
