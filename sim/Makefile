@@ -1,9 +1,8 @@
-
 ###################################################################
 # Project Configuration
 ###################################################################
-PROJECT = booth
-REGION = booth
+PROJECT = <project name>      # Same as Top-Level Entity
+REGION = <region name>        # Instance name
 
 WORK_DIR = work
 SYN_DIR = ..\syn\simulation\modelsim
