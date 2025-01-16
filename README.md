@@ -1,10 +1,24 @@
 # Building FPGAs with make tool
 Use the make tool to automate your work in CLI.
 
+**Compatible with Verilog (including SystemVerilog) and Windows only.**
+
 ## Environments
 - GNU Make 4.4.1(Built for Windows32)
 - Intel Quartus II Web Edition(v13.0sp1 for Windows)
 - ModelSim-Intel(Starter Edition)
+
+## Directory Structure
+    │  config
+    │  Makefile
+    │  README
+    ├─sim
+    │      booth_tb.v
+    │      Makefile
+    ├─src
+    │      booth.v
+    └─syn
+           Makefile
 
 ## Usages
 1. Modify project name in [config file](/config#L2). (must be same as the Top-Level Entity)
