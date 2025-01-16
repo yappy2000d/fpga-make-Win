@@ -18,7 +18,7 @@ compile: check_work copy_src
 	vlog $(wildcard *.v *.sv) +define+macro=value
 
 pre-sim: check_work copy_src 
-	vlog $(wildcard *.v *.sv) -R -c -do "run -all; quit"
+	vlog $(wildcard *.v *.sv) -R +notimingchecks -c -do "run -all; quit"
 
 post-sim: check_work copy_src $(PROJECT)_v.sdo $(PROJECT).vo
 	vlog $(wildcard *.v *.sv *.vo) -R -L $(LIB_DIR) -c \
