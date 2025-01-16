@@ -8,7 +8,8 @@ Use the make tool to automate your work in CLI.
 
 ## Usages
 1. Modify project name in [config file](/config#L2). (must be same as the Top-Level Entity)
-2. Before running the post-simulation, update the variable named [REGION](/sim/Makefile#L7) in the sim/Makefile file.
+2. Before running the synthesis, change Devices in [syn/Makefile](/syn/Makefile#L41) file.
+3. Before running the post-simulation, update the variable named REGION in the [sim/Makefile](/sim/Makefile#L7) file.
 
 ### Synthesis
 > [!IMPORTANT]  
@@ -24,7 +25,7 @@ PS \path\to\project> cd sim; make pre-sim
 ```
 
 ### Post-Sim
-Gate Level Simulation.
+Gate Level Simulation. Please run synthesis first.
 > [!IMPORTANT]  
 > REGION must be same as the instance name in testbench.
 ```ps1
