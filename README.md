@@ -6,7 +6,7 @@ Use the make tool to automate your work in CLI.
 - Intel Quartus II Web Edition(v13.0sp1 for Windows)
 - ModelSim-Intel(Starter Edition)
 
-## Usage
+## Usages
 1. Modify project name in [config file](/config#L2). (must be same as the Top-Level Entity)
 2. Before running the post-simulation, update the variable named [REGION](/sim/Makefile#L7) in the sim/Makefile file.
 
