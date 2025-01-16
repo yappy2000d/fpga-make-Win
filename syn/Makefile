@@ -19,8 +19,8 @@ ASSIGNMENT_FILES = $(PROJECT).qpf $(PROJECT).qsf
 all: copy_src smart.log $(PROJECT).asm.rpt $(PROJECT).sta.rpt eda
 
 clean:
-	del /q *.rpt *.chg smart.log *.htm *.eqn *.pin *.sof *.pof
-	rd /q /s .\db .\incremental_db
+	@del /q *.rpt *.chg smart.log *.htm *.eqn *.pin *.sof *.pof
+	@rd /q /s .\db .\incremental_db
 
 map: smart.log $(PROJECT).map.rpt
 fit: smart.log $(PROJECT).fit.rpt
@@ -86,4 +86,4 @@ asm.chg:
 ###################################################################
 
 copy_src:
-	copy /y ..\src\* . >NUL
+	@copy /y ..\src\* . >NUL
