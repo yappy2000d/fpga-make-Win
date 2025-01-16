@@ -12,16 +12,19 @@ LIB_DIR = C:\altera\13.0sp1\modelsim_ase\altera\verilog\cycloneii
 # Main Targets
 ###################################################################
 
-all: check_work copy_src compile_sim
-
-compile_sim:
-	vlog $(wildcard *.v *.sv) -R -c -do "run -all; quit"
-compile:
+compile: check_work copy_src 
 	vlog $(wildcard *.v *.sv) +define+macro=value
 
-gate_level: check_work copy_src $(PROJECT)_v.sdo $(PROJECT).vo
+pre-sim: check_work copy_src 
+	vlog $(wildcard *.v *.sv) -R -c -do "run -all; quit"
+
+post-sim: check_work copy_src $(PROJECT)_v.sdo $(PROJECT).vo
 	vlog $(wildcard *.v *.sv *.vo) -R -L $(LIB_DIR) -c \
 	 -sdftyp $(REGION)=$(PROJECT)_v.sdo -do "run -all; quit"
+
+clean:
+	@del /q /f *.csd
+	@rmdir /s /q $(WORK_DIR)
 
 copy_src:
 	@copy /y ..\src\* . >NUL
