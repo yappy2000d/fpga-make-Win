@@ -6,7 +6,7 @@
 ###################################################################
 
 PROJECT = <project name>      # Same as Top-Level Entity
-SRC_DIR = ..\src
+
 ASSIGNMENT_FILES = $(PROJECT).qpf $(PROJECT).qsf
 
 ###################################################################
@@ -31,7 +31,7 @@ eda: smart.log $(PROJECT).asm.rpt $(PROJECT).sta.rpt
 smart: smart.log
 
 copy_src:
-	@copy /y $(SRC_DIR)\* . >NUL
+	@copy /y ..\src\* . >NUL
 	$(eval SOURCE_FILES := $(wildcard *.v))
 
 ###################################################################
