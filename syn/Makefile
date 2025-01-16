@@ -5,7 +5,7 @@
 # File (.qsf), and the list of source files used.
 ###################################################################
 
-PROJECT = <project name>      # Same as Top-Level Entity
+include ../config
 
 ASSIGNMENT_FILES = $(PROJECT).qpf $(PROJECT).qsf
 
