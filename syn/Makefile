@@ -6,7 +6,7 @@
 ###################################################################
 
 PROJECT = top
-SOURCE_FILES = top.V
+SOURCE_FILES = top.v
 ASSIGNMENT_FILES = $(PROJECT).qpf $(PROJECT).qsf
 
 ###################################################################
