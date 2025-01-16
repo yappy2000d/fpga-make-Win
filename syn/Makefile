@@ -5,8 +5,8 @@
 # File (.qsf), and the list of source files used.
 ###################################################################
 
-PROJECT = top
-SOURCE_FILES = $(PROJECT).v
+PROJECT = <project name>      # Same as Top-Level Entity
+SRC_DIR = ..\src
 ASSIGNMENT_FILES = $(PROJECT).qpf $(PROJECT).qsf
 
 ###################################################################
@@ -26,8 +26,13 @@ map: smart.log $(PROJECT).map.rpt
 fit: smart.log $(PROJECT).fit.rpt
 asm: smart.log $(PROJECT).asm.rpt
 sta: smart.log $(PROJECT).sta.rpt
-eda: smart.log $(PROJECT).vo $(PROJECT).sdo
+eda: smart.log $(PROJECT).asm.rpt $(PROJECT).sta.rpt
+	quartus_eda $(PROJECT) --simulation --tool=modelsim --format=verilog
 smart: smart.log
+
+copy_src:
+	@copy /y $(SRC_DIR)\* . >NUL
+	$(eval SOURCE_FILES := $(wildcard *.v))
 
 ###################################################################
 # Executable Configuration
@@ -58,9 +63,6 @@ $(PROJECT).asm.rpt: asm.chg $(PROJECT).fit.rpt
 
 $(PROJECT).sta.rpt: sta.chg $(PROJECT).fit.rpt
 	quartus_sta $(STA_ARGS) $(PROJECT)
-	
-$(PROJECT).vo $(PROJECT).sdo: $(PROJECT).asm.rpt $(PROJECT).sta.rpt
-	quartus_eda $(PROJECT) --simulation --tool=modelsim --format=verilog
 
 smart.log: $(ASSIGNMENT_FILES)
 	quartus_sh --determine_smart_action $(PROJECT) > smart.log
@@ -81,9 +83,3 @@ sta.chg:
 asm.chg:
 	$(STAMP) asm.chg
 
-###################################################################
-# Copy source files from ../src to the current directory
-###################################################################
-
-copy_src:
-	@copy /y ..\src\* . >NUL
