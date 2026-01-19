@@ -1,3 +1,5 @@
+> newer version https://github.com/yappy2000d/quartus_make/tree/main
+
 # Building FPGAs with make tool
 
 Use the make tool to automate your work in CLI.
