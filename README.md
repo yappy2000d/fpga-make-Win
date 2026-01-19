@@ -12,7 +12,7 @@ Use the make tool to automate your work in CLI.
 
 ## Usages
 
-1. Add `C:\altera\13.0sp1\modelsim_ase\win32aloem` and `C:\altera\13.0sp1\modelsim_ase\win32aloem` to PATH.
+1. Add `C:\altera\13.1\quartus\bin` and `C:\altera\13.0sp1\modelsim_ase\win32aloem` to PATH.
 2. Modify project name in [config file](/config#L2). (must be same as the Top-Level Entity)
 3. Before running the synthesis, change Devices in [syn/Makefile](/syn/Makefile#L41) file.
 4. Before running the post-simulation, update the variable named REGION in the [sim/Makefile](/sim/Makefile#L7) file.
